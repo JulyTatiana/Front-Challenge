@@ -13,21 +13,21 @@ const ProviderForm = () => {
     const onChangeProviderName = (e:React.ChangeEvent<HTMLInputElement>) =>
         setProviderName(e.target.value)
 
-    const [provId, setProvId] = useState('')
-    const onChangeProvId = (e:React.ChangeEvent<HTMLInputElement>) =>
-        setProvId(e.target.value)
+    const [providerIdentification, setProviderIdentification] = useState('')
+    const onChangeProviderIdentification = (e:React.ChangeEvent<HTMLInputElement>) =>
+        setProviderIdentification(e.target.value)
 
-    const [address, setAddress] = useState('')
-    const onChangeAddress = (e:React.ChangeEvent<HTMLInputElement>) =>
-        setAddress(e.target.value)
+    const [providerAddress, setProviderAddress] = useState('')
+    const onChangeProviderAddress = (e:React.ChangeEvent<HTMLInputElement>) =>
+        setProviderAddress(e.target.value)
 
     
     const sendForm = (e:React.FormEvent<HTMLButtonElement>) =>{
         e.preventDefault()
-        createProvider(providerName, provId, address, dispatch)
+        createProvider(providerName, providerIdentification, providerAddress, dispatch)
         setProviderName('')
-        setProvId('')
-        setAddress('')
+        setProviderIdentification('')
+        setProviderAddress('')
     }
 
   return (
@@ -37,10 +37,10 @@ const ProviderForm = () => {
           value={providerName} onChange={onChangeProviderName} /> <br />
           <label htmlFor="provPersonalID">Provider Personal ID:</label>
           <input type="text" name="provPersonalID"
-           value={provId} onChange={ onChangeProvId } /> <br />
+           value={providerIdentification} onChange={ onChangeProviderIdentification } /> <br />
            <label htmlFor="address"> Address:</label>
            <input type="text" name="address" 
-           value={address} onChange={ onChangeAddress }/>
+           value={providerAddress} onChange={ onChangeProviderAddress }/>
            <button onClick={ sendForm }>Send</button>           
       </form>
     )

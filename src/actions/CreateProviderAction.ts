@@ -1,12 +1,12 @@
 import { addProvider } from "../state/slice/ProviderSlice"
 
 
-const createProvider = async (providerName:string, provId:string, address:string, dispatch:any) => {
+const createProvider = async (providerName:string, providerIdentification:string, providerAddress:string, dispatch:any) => {
 
     const createBody = {
         "providerName": providerName,
-        "providerPersonalId": provId,
-        "address": address
+        "providerPersonalId": providerIdentification,
+        "address": providerAddress
     }
 
     let createRequest = await fetch('http://localhost:8080/create/provider', { 
