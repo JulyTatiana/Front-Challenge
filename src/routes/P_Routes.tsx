@@ -5,11 +5,12 @@ import ProvidersList from '../components/ProvidersList'
 
 type Props = {}
 
-function P_Routes({}: Props) {
+function P_Routes() {
   return (
     <div>
         <Link to='/'> CreateProvider </Link> 
         <Link to='/providers'>  Providers </Link> 
+
         <Routes>
             <Route path="/" element={<ProviderForm/>} />
             <Route path="/providers" element={<ProvidersList />} />

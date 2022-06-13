@@ -1,18 +1,18 @@
-import {createSlice} from "@reduxjs/toolkit"
+import {createSlice, PayloadAction} from "@reduxjs/toolkit"
 
 type providerType = {
     providerId: string,
     providerName: string,
-    providerPersonalId: string,
-    address: string
+    providerIdentification: string,
+    providerAddress: string
 }
 
 const initialState: providerType [] = [
     {
-        providerId: '1',
-        providerName: 'July',
-        providerPersonalId: '100',
-        address: 'Carrera 54'
+        providerId: '',
+        providerName: '',
+        providerIdentification: '',
+        providerAddress: ''
     }
 ]
 
@@ -23,16 +23,17 @@ const providerSlice = createSlice({
         addProvider(state, action){
             state.push(action.payload);
         },
-        getAllProvider(state, action){
-            state.push(action.payload);
+        getAllProviders(state, action){
+            return action.payload;
         },
-        deleteProvider(state, action){
-            state.push(action.payload);
+        deleteProvider(state, action: PayloadAction<String>){
+            const newProvList = state.filter((prov) => prov.providerId != action.payload);
+            return newProvList
         }
     }
 })
 
-export const {addProvider, getAllProvider, deleteProvider} = providerSlice.actions
+export const {addProvider, getAllProviders, deleteProvider} = providerSlice.actions
 
 export default providerSlice.reducer
 
