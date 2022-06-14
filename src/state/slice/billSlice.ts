@@ -4,10 +4,11 @@ import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 export type billType ={
     billId?: string;
     billDate: string;
-    clientName: string;
-    sellerName: string;
-    productList: object;
-    totalPaid: number
+    client: string;
+    seller: string;
+    totalPaid: number;
+    productId: object
+    
 }
 
 export enum billFetchStatus {

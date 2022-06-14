@@ -43,7 +43,7 @@ const FormProviderPost: React.FunctionComponent<IFormProviderPostProps> = (props
     </div>
 
     <div className=''>
-      <label className='text-lg'>
+      <label className=''>
         Provider's Identification:
         <input className='' type='number' min='0' value={providerIdentification} onChange={(e) => setProviderIdentification(e.target.value)} />
       </label>

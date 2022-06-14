@@ -23,7 +23,7 @@ const FormProductPost: React.FunctionComponent<IFormProductPostProps> = (props) 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (minQuantity >= maxQuantity) {
-      alert("The min quantity have to be minor than the max quantity")
+      alert("the quantity has to be minor than max quantity")
       setProductName('')
       setProductDescription('')
       setMinQuantity('')
@@ -32,7 +32,7 @@ const FormProductPost: React.FunctionComponent<IFormProductPostProps> = (props) 
       setProductPrice('')
       setProviderId('')
     } else if (availableUnits > maxQuantity) {
-      alert("The product quantity have to be minor or equal than the max quantity")
+      alert("the quantity has to be minor or equal than max quantity")
       setProductName('')
       setProductDescription('')
       setMinQuantity('')

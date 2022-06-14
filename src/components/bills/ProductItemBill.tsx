@@ -22,11 +22,11 @@ const ProductItemBill: React.FunctionComponent<IProductItemBillProps> = ({produc
 
   return (
     <tr>
-        <td className='py-6'>
+        <td className=''>
             {product.productName}
         </td>
         <td>
-            <input type="number" defaultValue='0' className='border-2 border-amber-500 rounded-md' onChange={e=> updateQuantityHandler(e)} min='0' max={product.availableUnits}/>
+            <input type="number" defaultValue='0' className='' onChange={e=> updateQuantityHandler(e)} min='0' max={product.availableUnits}/>
         </td>
         <td>
             {product.availableUnits}

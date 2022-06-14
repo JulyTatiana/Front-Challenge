@@ -22,15 +22,13 @@ const ReceiptsList: React.FunctionComponent<IReceiptsListProps> = ({}) => {
         }
       }, [dispatch])
   return (
-    <table className='w-3/4 mx-auto pl-6 text-sm text-center rounded-lg'>
-      <thead className='bg-amber-500'>
+    <table className=''>
+      <thead className=''>
         <tr>
-            <th className='p-6 px-50 text-lg' >Date</th>
-            <th className='p-6 px-50 text-lg' >Provider ID</th>
-            <th className='p-6 px-50 text-lg'>Provider Name</th>
-            <th className='p-6 px-50 text-lg'>Product ID</th>
-            <th className='p-6 px-50 text-lg'>Product Name</th>
-            <th className='p-6 px-50 text-lg'>Quantity</th>
+            <th className=''>Provider ID</th>
+            <th className=''>Date</th>
+            <th className=''>Product's Units</th>
+            <th className=''>Product ID</th>
         </tr>
       </thead>
       <tbody>

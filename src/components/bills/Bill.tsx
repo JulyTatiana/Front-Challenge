@@ -14,21 +14,23 @@ const Bill: React.FunctionComponent<IBillProps> = ({bill}) => {
 
 
   return (
-    <div className='flex justify-center mx-auto sm:w-1/3 rounded-lg border-2 m-6'>
-      <div className='justify-center'>
+    <div className=''>
+      <div className=''>
       <ul >
-        <li className='p-4'>Bill ID: {bill.billId}</li>
-        <li className='p-4'>Bill Date: {bill.billDate}</li>
-        <li className='p-4'>Client Name: {bill.clientName}</li>
-        <li className='p-4'>Seller Name: {bill.sellerName} </li>
+        <li className=''>Bill ID: {bill.billId}</li>
+        <li className=''>Bill Date: {bill.billDate}</li>
+        <li className=''>Client Name: {bill.client}</li>
+        <li className=''>Seller Name: {bill.seller} </li>
+        <li className=''>Total Paid: {bill.totalPaid} </li>
+        <li className=''>Product Id: {bill.productId} </li>
       </ul>
-      <table className='w-full m-3'>
-        <thead className='mx-auto justify-center bg-amber-500'>
+      <table className=''>
+        <thead className=''>
           <th>Product</th>
           <th>Quantity</th>
         </thead>
         <tbody>
-          {Object.entries(bill.productList).map(entry => <BillProductRow key={bill.billId} entry={entry}/>)}
+          {Object.entries(bill.productId).map(entry => <BillProductRow key={bill.billId} entry={entry}/>)}
           <tr>
             <td>
               Total paid: {bill.totalPaid}

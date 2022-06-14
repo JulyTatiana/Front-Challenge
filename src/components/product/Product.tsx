@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { productType, deleteProduct } from '../../state/slice/productSlice';
+import { productType, deleteProductAction } from '../../state/slice/productSlice';
 import { useSelector } from 'react-redux';
 import { selectProviderState } from '../../state/slice/providerSlice'; 
 import { useAppDispatch } from '../../state/Store';
@@ -26,7 +26,7 @@ const Product: React.FunctionComponent<IProductProps> = ({product}) => {
 
   const commitProductEdition = async(product: productType) => {
     if (editQuantity > editMax){
-      alert("the quantity must be minor or equal than the max quantity")
+      alert("the quantity has to be minor than max quantity")
       setEditState(false)
       setEditName(product.productName);
       setEditDescription(product.productDescription);
@@ -49,7 +49,7 @@ const Product: React.FunctionComponent<IProductProps> = ({product}) => {
   }
 
   const deleteProd = async(product: productType) => {
-    dispatch(deleteProduct(product));
+    dispatch(deleteProductAction(product));
   }
 
   return (
@@ -75,13 +75,13 @@ const Product: React.FunctionComponent<IProductProps> = ({product}) => {
     <td><input type="number" value={editMin} onChange={e=>setEditMin((e.target.value))} min='0'/></td>
     <td><input type="number" value={editMax} onChange={e=>setEditMax((e.target.value))} min='0'/></td>
     <td>
-    {/* <select name="" id="" className='border-2 border-amber-500 rounded-md' value={editProvider}  onChange={e=>setEditProvider(e.target.value)}>
+    <select name="" id="" className='' value={editProvider}  onChange={e=>setEditProvider(e.target.value)}>
                   {providerState.map((provider) => provider.availability?<option key={provider.providerId} value = {provider.providerId}>
                     {provider.providerName}
                   </option>:<></>)}
-                </select> */}
+                </select>
     </td>
-    <td className='p-6 '><button className='bg-orange-500 hover:bg-green-700 text-white font-bold px-2 rounded' onClick={() => commitProductEdition(product)}>Save</button></td>
+    <td className=''><button className='' onClick={() => commitProductEdition(product)}>Save</button></td>
     </tr> 
     }
     </>)

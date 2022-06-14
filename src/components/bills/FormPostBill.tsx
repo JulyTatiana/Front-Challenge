@@ -15,8 +15,8 @@ interface IFormPostBillsProps {
 const FormPostBills: React.FunctionComponent<IFormPostBillsProps> = (props) => {
     const productState = useSelector(selectProductState())
     const dispatch = useAppDispatch();
-    const [clientName, setClientName] = useState('');
-    const [sellerName, setSellerName] = useState('');
+    const [client, setClientName] = useState('');
+    const [seller, setSellerName] = useState('');
     const billProducts = useSelector(selectBillProducts())
     const navigate = useNavigate();
 
@@ -28,16 +28,15 @@ const FormPostBills: React.FunctionComponent<IFormPostBillsProps> = (props) => {
             return [billProduct.productName, billProduct.quantity];
           }),
         );
-        const productList = Object.fromEntries(array);
+        const productId = Object.fromEntries(array);
 
         const totalPaid = billProducts.reduce((aum, product) => product.price + aum, 0);
 
+        const date = moment().format("DD-MM-YYYY");
 
-        const actualDate = moment().format("DD-MM-YYYY");
 
-
-        if(clientName && sellerName && productList && totalPaid){
-        const newBill:billType = {billDate: actualDate, clientName, sellerName, productList, totalPaid}
+        if(client && seller && productId && totalPaid){
+        const newBill:billType = {billDate: date, client, seller, productId, totalPaid}
           dispatch(postBill(newBill))
 
         // for(let billProduct of billProducts){
@@ -68,13 +67,13 @@ const FormPostBills: React.FunctionComponent<IFormPostBillsProps> = (props) => {
         <div className='inline-block w-1/2 p-6 mx-auto'>
       <label className='text-lg'>
           Client:
-          <input className='border-2 border-amber-500 rounded-md' type='text' value={clientName} onChange={e=>setClientName(e.target.value)}/>
+          <input className='border-2 border-amber-500 rounded-md' type='text' value={client} onChange={e=>setClientName(e.target.value)}/>
       </label>
     </div>
     <div className='inline-block w-1/2 p-6 mx-auto'>
       <label className='text-lg'>
           Seller:
-          <input className='border-2 border-amber-500 rounded-md' type='text' value={sellerName} onChange={e=>setSellerName(e.target.value)} />
+          <input className='border-2 border-amber-500 rounded-md' type='text' value={seller} onChange={e=>setSellerName(e.target.value)} />
       </label>
     </div>
 

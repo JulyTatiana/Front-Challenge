@@ -20,18 +20,18 @@ const ProductList: React.FunctionComponent<IProductListProps> = (props) => {
     }
     }, [dispatch])
     return (
-        <table className='w-full mx-auto pl-6 text-sm text-center rounded-lg'>
-        <thead className='bg-amber-500'>
+        <table className=''>
+        <thead className=''>
           <tr>
-            <th className='p-6 px-50 text-lg'>Product Name</th>
-            <th className='p-6 px-50 text-lg'>Description</th>
-            <th className='p-6 px-50 text-lg'>Price</th>
-            <th className='p-6 px-50 text-lg'>Quantity</th>
-            <th className='p-6 px-50 text-lg'>Min Quantity</th>
-            <th className='p-6 px-50 text-lg'>Max Quantity</th>
-            <th className='p-6 px-50 text-lg'>Provider</th>
-            <th className='p-6 px-50 text-lg'>Edit</th>
-            <th className='p-6 px-50 text-lg'>Delete</th>
+            <th className=''>Product Name</th>
+            <th className=''>Product's Description</th>
+            <th className=''>Min Quantity</th>
+            <th className=''>Max Quantity</th>
+            <th className=''>Available Units</th>
+            <th className=''>Product's price</th>
+            <th className=''>Provider Id</th>
+            <th className=''>Edit</th>
+            <th className=''>Delete</th>
 
           </tr>
         </thead>

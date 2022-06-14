@@ -1,5 +1,6 @@
 import { RootState } from '../Store';
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
+//import deleteProductAction from '../../actions/product/deleteProductAction';
 
 export type productType ={
     productId?: string;
@@ -61,7 +62,7 @@ export const getAllProducts = createAsyncThunk('getAllProducts', async () => {
     return (await response.json()) as productType
   })
 
-  export const deleteProduct = createAsyncThunk('deleteProduct', async (product: productType) => {
+  export const deleteProductAction = createAsyncThunk('deleteProductAction', async (product: productType) => {
     const response = await fetch(`${productsURL.deleteProductBaseURL}/${product.productId}`, {
       method: 'DELETE',
     })
@@ -113,16 +114,16 @@ export const productSlice = createSlice({
         })
         
         // delete
-        builder.addCase(deleteProduct.pending, (state) => {
+        builder.addCase(deleteProductAction.pending, (state) => {
             state.status = productFetchStatus.PENDING
         })
-        builder.addCase(deleteProduct.fulfilled, (state, action) => {
+        builder.addCase(deleteProductAction.fulfilled, (state, action) => {
             state.status = productFetchStatus.COMPLETED
             if (action.payload.deleted) {
               state.products = state.products.filter((product) => product.productId !== action.payload.productId)
             }
         })
-        builder.addCase(deleteProduct.rejected, (state) => {
+        builder.addCase(deleteProductAction.rejected, (state) => {
             state.status = productFetchStatus.FAILED
             state.error = 'Something went wrong while deleting the post'
         })
