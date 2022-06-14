@@ -20,8 +20,6 @@ const FormPostBills: React.FunctionComponent<IFormPostBillsProps> = (props) => {
     const billProducts = useSelector(selectBillProducts())
     const navigate = useNavigate();
 
-
-
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         
@@ -42,18 +40,23 @@ const FormPostBills: React.FunctionComponent<IFormPostBillsProps> = (props) => {
         const newBill:billType = {billDate: actualDate, clientName, sellerName, productList, totalPaid}
           dispatch(postBill(newBill))
 
-        for(let billProduct of billProducts){
-          let productToUpdate = productState.find(product => product.productName === billProduct.productName) as productType;
-          let productUpdated: productType = {
-          productId: productToUpdate.productId,
-          productName: productToUpdate.productName,
-          description: productToUpdate.description,
-          productQuantity: productToUpdate.productQuantity - billProduct.quantity,
-          productPrice: productToUpdate.productPrice,
-          minQuantity: productToUpdate.minQuantity,
-          maxQuantity: productToUpdate.maxQuantity,
-          providerId: productToUpdate.providerId} 
-        }
+        // for(let billProduct of billProducts){
+        //   let productToUpdate = productState.find(product => product.productName === billProduct.productName) as productType;
+
+        //   let productUpdated: productType = {
+        //   productId: productToUpdate.productId,
+        //   productName: productToUpdate.productName,
+        //   productDescription: productToUpdate.productDescription,
+
+        //   availableUnits: ()  => {
+        //     const availableUnit = parseInt(productToUpdate.availableUnits) - billProduct.quantity;
+        //     return num.toString(availableUnit)
+        //   },
+        //   productPrice: productToUpdate.productPrice,
+        //   minQuantity: productToUpdate.minQuantity,
+        //   maxQuantity: productToUpdate.maxQuantity,
+        //   providerId: productToUpdate.providerId} 
+        // }
         navigate('/bills')
 
         }

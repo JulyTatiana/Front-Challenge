@@ -22,7 +22,7 @@ const FormReceiptPost: React.FunctionComponent<IFormReceiptPostProps> = (props) 
     e.preventDefault();
 
     const product = productState.filter(product => product.productId === productId)[0];
-    if(product.productQuantity + quantity > product.maxQuantity){
+    if(product.availableUnits + quantity > product.maxQuantity){
       alert("the product quantity would be greater than the maximum")
     } else if(productId && quantity){
         const actualDate = moment().format("DD-MM-YYYY");   

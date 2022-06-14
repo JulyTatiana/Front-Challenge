@@ -52,32 +52,28 @@ const Product: React.FunctionComponent<IProductProps> = ({product}) => {
     dispatch(deleteProduct(product));
   }
 
-
-
-
-
   return (
     <>
       {editState === false?
-    <tr className={product.availableUnits < product.minQuantity? 'bg-red-500':''}>
-      <td className='p-3 '>{product.productName}</td>
-      <td className='p-3 '>{product.productDescription}</td>
-      <td className='p-3 '>{product.minQuantity}</td>
-      <td className='p-3 '>{product.maxQuantity}</td>
-      <td className='p-3 '>{product.productPrice}</td>
-      <td className='p-3 '>{product.availableUnits}</td>
-      <td className='p-3 '>{providersName}</td>
-      <td className='p-6 '><button className='bg-blue-500 hover:bg-blue-700 text-white font-bold px-2 rounded' onClick={e => setEditState(true)}>Edit</button></td>
-      <td className='p-6 '><button className='bg-red-500 hover:bg-orange-700 text-white font-bold px-2 rounded' onClick={() => deleteProd(product)}>Delete</button></td>
+    <tr className={product.availableUnits < product.minQuantity? '':''}>
+      <td className=''>{product.productName}</td>
+      <td className=''>{product.productDescription}</td>
+      <td className=''>{product.minQuantity}</td>
+      <td className=''>{product.maxQuantity}</td>
+      <td className=''>{product.productPrice}</td>
+      <td className=''>{product.availableUnits}</td>
+      <td className=''>{providersName}</td>
+      <td className=' '><button className='' onClick={e => setEditState(true)}>Edit</button></td>
+      <td className=' '><button className='' onClick={() => deleteProd(product)}>Delete</button></td>
     </tr>
       :
     <tr>
     <td><input type="text"  value={editName} onChange={e=>setEditName(e.target.value)}/></td>
     <td><input type="text" value={editDescription} onChange={e=>setEditDescription(e.target.value)}/></td>
-    <td><input type="number" value={editPrice} onChange={e=>setEditPrice(Number(e.target.value))} min='1'/></td>
-    <td><input type="number" value={editQuantity} onChange={e=>setEditQuantity(Number(e.target.value))} min='0'/></td>
-    <td><input type="number" value={editMin} onChange={e=>setEditMin(Number(e.target.value))} min='0'/></td>
-    <td><input type="number" value={editMax} onChange={e=>setEditMax(Number(e.target.value))} min='0'/></td>
+    <td><input type="number" value={editPrice} onChange={e=>setEditPrice((e.target.value))} min='1'/></td>
+    <td><input type="number" value={editQuantity} onChange={e=>setEditQuantity((e.target.value))} min='0'/></td>
+    <td><input type="number" value={editMin} onChange={e=>setEditMin((e.target.value))} min='0'/></td>
+    <td><input type="number" value={editMax} onChange={e=>setEditMax((e.target.value))} min='0'/></td>
     <td>
     {/* <select name="" id="" className='border-2 border-amber-500 rounded-md' value={editProvider}  onChange={e=>setEditProvider(e.target.value)}>
                   {providerState.map((provider) => provider.availability?<option key={provider.providerId} value = {provider.providerId}>

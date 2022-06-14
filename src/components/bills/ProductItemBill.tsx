@@ -14,7 +14,7 @@ const ProductItemBill: React.FunctionComponent<IProductItemBillProps> = ({produc
     
 
     const updateQuantityHandler = (e:React.ChangeEvent<HTMLInputElement>) => {
-        const itemPrice = product.productPrice * Number(e.target.value)
+        const itemPrice = Number(product.productPrice) * Number(e.target.value)
         const billProduct = {productName: product.productName, quantity: Number(e.target.value), price:itemPrice}
 
             dispatch(productToBill(billProduct))
@@ -26,10 +26,10 @@ const ProductItemBill: React.FunctionComponent<IProductItemBillProps> = ({produc
             {product.productName}
         </td>
         <td>
-            <input type="number" defaultValue='0' className='border-2 border-amber-500 rounded-md' onChange={e=> updateQuantityHandler(e)} min='0' max={product.productQuantity}/>
+            <input type="number" defaultValue='0' className='border-2 border-amber-500 rounded-md' onChange={e=> updateQuantityHandler(e)} min='0' max={product.availableUnits}/>
         </td>
         <td>
-            {product.productQuantity}
+            {product.availableUnits}
         </td>
         <td>
             {product.productPrice}

@@ -5,10 +5,10 @@ export type productType ={
     productId?: string;
     productName: string;
     productDescription: string;
-    minQuantity: number;
-    maxQuantity: number;
-    availableUnits: number;
-    productPrice: number,
+    minQuantity: string;
+    maxQuantity: string;
+    availableUnits: string;
+    productPrice: string,
     providerId: string;
 }
 

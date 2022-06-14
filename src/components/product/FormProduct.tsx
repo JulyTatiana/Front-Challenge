@@ -11,10 +11,10 @@ interface IFormProductPostProps {
 const FormProductPost: React.FunctionComponent<IFormProductPostProps> = (props) => {
   const [productName, setProductName] = useState('')
   const [productDescription, setProductDescription] = useState('')
-  const [minQuantity, setMinQuantity] = useState(0)
-  const [maxQuantity, setMaxQuantity] = useState(0)
-  const [availableUnits, setAvailableUnits] = useState(0)
-  const [productPrice, setProductPrice] = useState(0)
+  const [minQuantity, setMinQuantity] = useState('')
+  const [maxQuantity, setMaxQuantity] = useState('')
+  const [availableUnits, setAvailableUnits] = useState('')
+  const [productPrice, setProductPrice] = useState('')
   const [providerId, setProviderId] = useState('')
   const providerState = useSelector(selectProviderState())
 
@@ -26,19 +26,19 @@ const FormProductPost: React.FunctionComponent<IFormProductPostProps> = (props) 
       alert("The min quantity have to be minor than the max quantity")
       setProductName('')
       setProductDescription('')
-      setMinQuantity(0)
-      setMaxQuantity(0)
-      setAvailableUnits(0)
-      setProductPrice(0)
+      setMinQuantity('')
+      setMaxQuantity('')
+      setAvailableUnits('')
+      setProductPrice('')
       setProviderId('')
     } else if (availableUnits > maxQuantity) {
       alert("The product quantity have to be minor or equal than the max quantity")
       setProductName('')
       setProductDescription('')
-      setMinQuantity()
-      setMaxQuantity()
-      setAvailableUnits()
-      setProductPrice()
+      setMinQuantity('')
+      setMaxQuantity('')
+      setAvailableUnits('')
+      setProductPrice('')
       setProviderId('')
     }
 
@@ -47,23 +47,23 @@ const FormProductPost: React.FunctionComponent<IFormProductPostProps> = (props) 
       dispatch(postProduct(newProduct))
       setProductName('')
       setProductDescription('')
-      setMinQuantity(0)
-      setMaxQuantity(0)
-      setAvailableUnits(0)
-      setProductPrice(0)
+      setMinQuantity('')
+      setMaxQuantity('')
+      setAvailableUnits('')
+      setProductPrice('')
       setProviderId('')
     }
   }
 
   const saveProductForm = (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault()
-    createProductAction(productName, productDescription, minQuantity, maxQuantity, availableUnits, productPrice, providerId)
+    createProductAction(productName, productDescription, parseInt(minQuantity), parseInt(maxQuantity), parseInt(availableUnits), parseInt(productPrice), providerId)
     setProductName('')
     setProductDescription('')
-    setMinQuantity(1)
-    setMaxQuantity(100)
-    setAvailableUnits(20)
-    setProductPrice(10)
+    setMinQuantity('')
+    setMaxQuantity('')
+    setAvailableUnits('')
+    setProductPrice('')
     setProviderId('')
   }
 
@@ -86,10 +86,10 @@ const FormProductPost: React.FunctionComponent<IFormProductPostProps> = (props) 
           <tr>
             <td><input type="text" className='' value={productName} onChange={e => setProductName(e.target.value)} /></td>
             <td><input type="text" className='' value={productDescription} onChange={e => setProductDescription(e.target.value)} /></td>
-            <td><input type="number" className='' value={productPrice} onChange={e => setProductPrice(Number(e.target.value))} min='1' /></td>
-            <td><input type="number" className='' value={availableUnits} onChange={e => setAvailableUnits(Number(e.target.value))} min='0' /></td>
-            <td><input type="number" className='' value={minQuantity} onChange={e => setMinQuantity(Number(e.target.value))} min='0' /></td>
-            <td><input type="number" className='' value={maxQuantity} onChange={e => setMaxQuantity(Number(e.target.value))} min='0' /></td>
+            <td><input type="number" className='' value={productPrice} onChange={e => setProductPrice((e.target.value))} min='1' /></td>
+            <td><input type="number" className='' value={availableUnits} onChange={e => setAvailableUnits((e.target.value))} min='0' /></td>
+            <td><input type="number" className='' value={minQuantity} onChange={e => setMinQuantity((e.target.value))} min='0' /></td>
+            <td><input type="number" className='' value={maxQuantity} onChange={e => setMaxQuantity((e.target.value))} min='0' /></td>
             <td><input type="string" className='' value={providerId} onChange={e=>setProviderId(e.target.value)}/></td>
             <select name="" id="" className='' onChange={e => setProviderId(e.target.value)}>
               {<option disabled selected>Choose Provider</option>}
