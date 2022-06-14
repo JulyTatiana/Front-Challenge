@@ -22,37 +22,37 @@ const FormProductPost: React.FunctionComponent<IFormProductPostProps> = (props) 
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if (minQuantity >= maxQuantity) {
-      alert("the quantity has to be minor than max quantity")
-      setProductName('')
-      setProductDescription('')
-      setMinQuantity('')
-      setMaxQuantity('')
-      setAvailableUnits('')
-      setProductPrice('')
-      setProviderId('')
-    } else if (availableUnits > maxQuantity) {
-      alert("the quantity has to be minor or equal than max quantity")
-      setProductName('')
-      setProductDescription('')
-      setMinQuantity('')
-      setMaxQuantity('')
-      setAvailableUnits('')
-      setProductPrice('')
-      setProviderId('')
-    }
+    // if (minQuantity >= maxQuantity) {
+    //   //alert("the quantity has to be minor than max quantity")
+    //   setProductName('')
+    //   setProductDescription('')
+    //   setMinQuantity('')
+    //   setMaxQuantity('')
+    //   setAvailableUnits('')
+    //   setProductPrice('')
+    //   setProviderId('')
+    // } else if (availableUnits > maxQuantity) {
+    //   //alert("the quantity has to be minor or equal than max quantity")
+    //   setProductName('')
+    //   setProductDescription('')
+    //   setMinQuantity('')
+    //   setMaxQuantity('')
+    //   setAvailableUnits('')
+    //   setProductPrice('')
+    //   setProviderId('')
+    // }
 
-    else if (productName && productDescription && availableUnits && productPrice && minQuantity && maxQuantity && providerId) {
-      const newProduct: productType = { productName, productDescription, availableUnits, productPrice, minQuantity, maxQuantity, providerId }
-      dispatch(postProduct(newProduct))
-      setProductName('')
-      setProductDescription('')
-      setMinQuantity('')
-      setMaxQuantity('')
-      setAvailableUnits('')
-      setProductPrice('')
-      setProviderId('')
-    }
+    // else if (productName && productDescription && availableUnits && productPrice && minQuantity && maxQuantity && providerId) {
+    //   const newProduct: productType = { productName, productDescription, availableUnits, productPrice, minQuantity, maxQuantity, providerId }
+    //   dispatch(postProduct(newProduct))
+    //   setProductName('')
+    //   setProductDescription('')
+    //   setMinQuantity('')
+    //   setMaxQuantity('')
+    //   setAvailableUnits('')
+    //   setProductPrice('')
+    //   setProviderId('')
+    // }
   }
 
   const saveProductForm = (e: React.FormEvent<HTMLButtonElement>) => {

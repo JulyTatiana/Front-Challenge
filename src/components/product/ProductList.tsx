@@ -8,11 +8,13 @@ interface IProductListProps {
 }
 
 const ProductList: React.FunctionComponent<IProductListProps> = (props) => {
-  
+
   const error = useSelector(selectProductFetchError())
   const status = useSelector(selectProductStatus())
   const productState = useSelector(selectProductState())
   const dispatch = useAppDispatch();
+  const products = productState.map(product => product)
+  console.log(products)
 
     React.useEffect(() => {
         if (status === productFetchStatus.IDLE) {

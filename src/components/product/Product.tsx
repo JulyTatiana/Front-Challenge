@@ -10,8 +10,12 @@ interface IProductProps {
 
 const Product: React.FunctionComponent<IProductProps> = ({product}) => {
   const providerState = useSelector(selectProviderState())
+  const availability = providerState.map(provider => provider.availability)
+  console.log(availability)
   const provider = providerState.filter(provider => provider.providerId === product.providerId)[0];
-  const providersName = provider.providerName;
+  //const provider = providerState.filter(provider => provider)
+  //console.log(provider)
+  //const providersName = provider.providerName;
   const dispatch = useAppDispatch()
 
 
@@ -62,7 +66,7 @@ const Product: React.FunctionComponent<IProductProps> = ({product}) => {
       <td className=''>{product.maxQuantity}</td>
       <td className=''>{product.productPrice}</td>
       <td className=''>{product.availableUnits}</td>
-      <td className=''>{providersName}</td>
+      {/* <td className=''>{provider.providerId}</td> */}
       <td className=' '><button className='' onClick={e => setEditState(true)}>Edit</button></td>
       <td className=' '><button className='' onClick={() => deleteProd(product)}>Delete</button></td>
     </tr>
@@ -79,6 +83,7 @@ const Product: React.FunctionComponent<IProductProps> = ({product}) => {
                   {providerState.map((provider) => provider.availability?<option key={provider.providerId} value = {provider.providerId}>
                     {provider.providerName}
                   </option>:<></>)}
+  
                 </select>
     </td>
     <td className=''><button className='' onClick={() => commitProductEdition(product)}>Save</button></td>

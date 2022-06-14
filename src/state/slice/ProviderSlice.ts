@@ -2,7 +2,7 @@ import { RootState } from '../Store';
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 
 export type providerType ={
-    providerId?: string;
+    providerId: string;
     providerName: string;
     providerIdentification: string;
     providerAddress: string;
