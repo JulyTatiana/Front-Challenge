@@ -7,7 +7,6 @@ import loggedInReducer from '../state/slice/loggedinSlice';
 import { billSlice } from '../state/slice/billSlice';
 
 
-
 export const store = configureStore({
     reducer:{
         providers: providerSlice.reducer,

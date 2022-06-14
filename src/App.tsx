@@ -1,16 +1,16 @@
 import { useState } from 'react'
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
-import Providers from './pages/providers/Providers'
-import Inventory from './pages/inventory/Inventory'
-import Bills from './pages/bills/Bills'
-import Receipts from './pages/receipts/Receipts'
+import Providers from './pages/Providers'
+import Inventory from './pages/Inventory'
+import Bills from './pages/Bills'
+import Receipts from './pages/Receipts'
 import ProviderList from './components/provider/ProviderList'
-import Home from './pages/home/Home'
+import Home from './pages/Home'
 import './App.css'
-import FormProviderPost from './components/provider/FormProviderPost'
+import FormProviderPost from './components/provider/FormProvider'
 import { useSelector } from 'react-redux'
 import { RootState } from './state/Store'
-import GenerateBill from './pages/generateBill/GenerateBill'
+import GenerateBill from './pages/GenerateBill'
 
 function App() {
 

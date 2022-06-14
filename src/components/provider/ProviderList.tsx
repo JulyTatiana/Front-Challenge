@@ -6,7 +6,7 @@ import Provider from './Provider'
 
 interface IProviderListProps { }
 
-const ProviderList: React.FunctionComponent<IProviderListProps> = ({ }) => {
+const ProviderList: React.FunctionComponent<IProviderListProps> = () => {
   const dispatch = useAppDispatch()
 
   const error = useSelector(selectProviderFetchError())

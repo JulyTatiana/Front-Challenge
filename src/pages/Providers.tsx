@@ -1,12 +1,12 @@
 import * as React from 'react';
-import FormProviderPost from '../../components/provider/FormProviderPost';
-import ProviderList from '../../components/provider/ProviderList';
-import { useAppDispatch} from '../../state/Store';
+import FormProviderPost from '../components/provider/FormProvider';
+import ProviderList from '../components/provider/ProviderList';
+import { useAppDispatch} from '../state/Store';
 import { useSelector } from 'react-redux';
-import { selectReceiptStatus, receiptFetchStatus, getAllReceipts } from '../../state/slice/receiptSlice';
-import { selectProviderStatus, providerFetchStatus, getAllProviders } from '../../state/slice/providerSlice';
-import { selectProductStatus, productFetchStatus, getAllProducts } from '../../state/slice/productSlice';
-import { selectBillStatus, billFetchStatus, getAllBills } from '../../state/slice/billSlice';
+import { selectReceiptStatus, receiptFetchStatus, getAllReceipts } from '../state/slice/receiptSlice';
+import { selectProviderStatus, providerFetchStatus, getAllProviders } from '../state/slice/providerSlice';
+import { selectProductStatus, productFetchStatus, getAllProducts } from '../state/slice/productSlice';
+import { selectBillStatus, billFetchStatus, getAllBills } from '../state/slice/billSlice';
 
 
 interface IProvidersProps {

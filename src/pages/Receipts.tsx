@@ -1,6 +1,6 @@
 import * as React from 'react';
-import FormReceiptPost from '../../components/receipt/FormReceiptPost';
-import ReceiptsList from '../../components/receipt/ReceiptsList';
+import FormReceiptPost from '../components/receipt/FormReceipt';
+import ReceiptsList from '../components/receipt/ReceiptsList';
 
 interface IReceiptsProps {
 }

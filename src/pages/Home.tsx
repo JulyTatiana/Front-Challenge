@@ -1,5 +1,5 @@
 import * as React from 'react';
-import GoogleLogin from '../../components/loginComponents/GoogleLogin';
+import GoogleLogin from '../components/loginComponents/GoogleLogin';
 
 interface IHomeProps {
 }

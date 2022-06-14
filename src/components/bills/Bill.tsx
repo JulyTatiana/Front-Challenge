@@ -2,7 +2,7 @@ import * as React from 'react';
 import { billType } from '../../state/slice/billSlice';
 import { useSelector} from 'react-redux';
 import {selectProductState} from '../../state/slice/productSlice';
-import BillProductRow from './BillProductRow';
+import BillProductRow from './BillProduct';
 
 interface IBillProps {
   bill:billType

@@ -1,21 +1,20 @@
-import * as React from 'react';
 import { useAppDispatch } from '../../state/Store'
 import { postProduct, productType } from '../../state/slice/productSlice';
 import { useSelector } from 'react-redux'
 import { selectProviderState } from '../../state/slice/providerSlice'
-
+import { useState } from 'react';
 
 interface IFormProductPostProps {
 }
 
 const FormProductPost: React.FunctionComponent<IFormProductPostProps> = (props) => {
-    const [productName, setProductName] = React.useState('')
-    const [description, setDescription] = React.useState('')
-    const [productQuantity, setProductQuantity] = React.useState(0)
-    const [productPrice, setProductPrice] = React.useState(0)
-    const [minQuantity, setMinQuantity] = React.useState(0)
-    const [maxQuantity, setMaxQuantity] = React.useState(0)
-    const [providerId, setProviderId] = React.useState('')
+    const [productName, setProductName] = useState('')
+    const [description, setDescription] = useState('')
+    const [productQuantity, setProductQuantity] = useState(0)
+    const [productPrice, setProductPrice] = useState(0)
+    const [minQuantity, setMinQuantity] = useState(0)
+    const [maxQuantity, setMaxQuantity] = useState(0)
+    const [providerId, setProviderId] = useState('')
     const providerState = useSelector(selectProviderState())
 
     

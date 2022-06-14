@@ -12,7 +12,7 @@ const Provider: React.FunctionComponent<IProviderProps> = ({provider}) => {
 
     const providerUpdate = async (e:React.ChangeEvent<HTMLInputElement>, provider: providerType) => {
       setAvailability(e.target.checked);
-      const updatedProvider: providerType = { ...provider, availability: !availability}
+      // const updatedProvider: providerType = { ...provider, availability: !availability}
       }
   
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import FormProductPost from '../../components/product/FormProductPost';
-import ProductList from '../../components/product/ProductList';
+import FormProductPost from '../components/product/FormProduct';
+import ProductList from '../components/product/ProductList';
 
 interface IInventoryProps {
 }
