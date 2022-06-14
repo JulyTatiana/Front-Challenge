@@ -1,4 +1,5 @@
 import * as React from 'react';
+import createProviderAction from '../../actions/provider/createProviderAction';
 import { postProvider, providerType } from '../../state/slice/providerSlice';
 import { useAppDispatch } from '../../state/Store'
 
@@ -24,30 +25,38 @@ const FormProviderPost: React.FunctionComponent<IFormProviderPostProps> = (props
     }
   }
 
-  return (<form onSubmit={(e) => handleSubmit(e)} className='w-3/4 mx-auto rounded-lg border-4'>
-    <h1 className='text-lg bg-amber-500 mx-auto py-5 text-center font-bold rounded-lg'>Add New Provider</h1>
-    <div className='p-6 mx-auto'>
-      <label className='text-lg'>
+  const saveProviderForm = (e:React.FormEvent<HTMLButtonElement> ) => {
+    e.preventDefault() 
+    createProviderAction(providerName, providerIdentification, providerAddress)
+    setProviderName('')
+    setProviderIdentification('')
+    setProviderAddress('')
+  }
+
+  return (<form className=''>
+    <h1 className=''>Please add a new provider</h1>
+    <div className=''>
+      <label className=''>
         Provider's Name:
-        <input className='border-2 border-amber-500 rounded-md' type='text' value={providerName} onChange={(e) => setProviderName(e.target.value)} />
+        <input className='' type='text' value={providerName} onChange={(e) => setProviderName(e.target.value)} />
       </label>
     </div>
 
-    <div className='p-6 mx-auto'>
+    <div className=''>
       <label className='text-lg'>
         Provider's Identification:
-        <input className='border-2 border-amber-500 rounded-md' type='number' min='0' value={providerIdentification} onChange={(e) => setProviderIdentification(e.target.value)} />
+        <input className='' type='number' min='0' value={providerIdentification} onChange={(e) => setProviderIdentification(e.target.value)} />
       </label>
 
     </div>
-    <div className='p-6 mx-auto'>
-      <label className='text-lg'>
+    <div className=''>
+      <label className=''>
         Provider's Address:
-        <input className='border-2 border-amber-500 rounded-md' type='text' value={providerAddress} onChange={(e) => setProviderAddress(e.target.value)} />
+        <input className='' type='text' value={providerAddress} onChange={(e) => setProviderAddress(e.target.value)} />
       </label>
     </div>
-    <div className='flex justify-center my-4'>
-      <button type='submit' className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Submit</button>
+    <div className=''>
+      <button type='submit' onClick={(e) => saveProviderForm(e)} className=''>Submit</button>
     </div>
 
   </form>)

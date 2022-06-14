@@ -4,11 +4,11 @@ import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 export type productType ={
     productId?: string;
     productName: string;
-    description: string;
-    productQuantity: number;
-    productPrice: number;
+    productDescription: string;
     minQuantity: number;
     maxQuantity: number;
+    availableUnits: number;
+    productPrice: number,
     providerId: string;
 }
 

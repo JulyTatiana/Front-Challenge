@@ -29,8 +29,8 @@ const initialState: IProvidersState = {
 }
 
 enum providerURL {
-    getAllProvidersURL = 'https://raul-back-webflux.herokuapp.com/get/providers',
-    postProviderURL = 'https://raul-back-webflux.herokuapp.com/create/provider', 
+    getAllProvidersURL = 'http://localhost:8090/get/providers',
+    postProviderURL = 'http://localhost:8090/create/provider', 
 } 
 
 export const getAllProviders = createAsyncThunk('getAllProviders', async () => {
@@ -78,7 +78,7 @@ export const providerSlice = createSlice({
         })
         builder.addCase(postProvider.rejected, (state) => {
             state.status = providerFetchStatus.FAILED
-            state.error = 'Something went wrong while fetching'
+            state.error = 'fetching is not working properly'
         })
 
     }
