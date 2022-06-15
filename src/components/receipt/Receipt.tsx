@@ -14,8 +14,6 @@ const Receipt: React.FunctionComponent<IReceiptProps> = ({receipt}) => {
   const providerState = useSelector(selectProviderState())
   const productState = useSelector(selectProductState())
 
-
-
   return (
     <tr>
       <td><p className=''>{receipt.receiptDate}</p></td>

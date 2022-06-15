@@ -32,7 +32,7 @@ const ProductList: React.FunctionComponent<IProductListProps> = (props) => {
             <th className=''>Available Units</th>
             <th className=''>Product's price</th>
             <th className=''>Provider Id</th>
-            <th className=''>Edit</th>
+            {/* <th className=''>Edit</th> */}
             <th className=''>Delete</th>
 
           </tr>
