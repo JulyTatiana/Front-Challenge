@@ -22,6 +22,10 @@ const Product: React.FunctionComponent<IProductProps> = ({product}) => {
     dispatch(deleteProductAction(product));
   }
 
+  return (
+    <h1> Here we have a product </h1>
+  )
+
 
   // const [editState, setEditState] = React.useState(false);
   // const [editName, setEditName] = React.useState(product.productName);
@@ -35,7 +39,7 @@ const Product: React.FunctionComponent<IProductProps> = ({product}) => {
   // const commitProductEdition = async(product: productType) => {
   //   if (editQuantity > editMax){
   //     alert("the quantity has to be minor than max quantity")
-  //     setEditState(false)
+  //     setEditState(true)
   //     setEditName(product.productName);
   //     setEditDescription(product.productDescription);
   //     setEditMin(product.minQuantity);
@@ -52,13 +56,13 @@ const Product: React.FunctionComponent<IProductProps> = ({product}) => {
   //     availableUnits: editQuantity,
   //     productPrice: editPrice,
   //     providerId: editProvider}
-  //     setEditState(false)
+  //     setEditState(true)
   //   }
   // }
 
   // return (
   //   <>
-  //     {editState === false?
+  //     {editState === true?
   //   <tr className={product.availableUnits < product.minQuantity? '':''}>
   //     <td className=''>{product.productName}</td>
   //     <td className=''>{product.productDescription}</td>

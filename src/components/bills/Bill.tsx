@@ -11,8 +11,6 @@ interface IBillProps {
 const Bill: React.FunctionComponent<IBillProps> = ({bill}) => {
   const productState = useSelector(selectProductState());
 
-
-
   return (
     <div className=''>
       <div className=''>
@@ -22,7 +20,7 @@ const Bill: React.FunctionComponent<IBillProps> = ({bill}) => {
         <li className=''>Client Name: {bill.client}</li>
         <li className=''>Seller Name: {bill.seller} </li>
         <li className=''>Total Paid: {bill.totalPaid} </li>
-        <li className=''>Product Id: {bill.productId} </li>
+        {/* <li className=''>Product Id: {bill.productId} </li> */}
       </ul>
       <table className=''>
         <thead className=''>

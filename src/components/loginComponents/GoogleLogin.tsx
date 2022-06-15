@@ -68,12 +68,12 @@ const GoogleLogin: React.FunctionComponent<IGoogleLoginProps> = (props) => {
   <h1>Sign In</h1>
   <form>
     <div className="form-item">
-      <label for="email"></label>
-      <input type="email" name="email" required="required" placeholder="Email Address"></input>
+      <label htmlFor="email"></label>
+      <input type="email" name="email" required placeholder="Email Address"></input>
     </div>
     <div className="form-item">
-      <label for="password"></label>
-      <input type="password" name="password" required="required" placeholder="Password"></input>
+      <label htmlFor="password"></label>
+      <input type="password" name="password" required placeholder="Password"></input>
     </div>
     <div className="button-panel">
       <input type="submit" className="button" title="Sign In" value="Sign In"></input>
