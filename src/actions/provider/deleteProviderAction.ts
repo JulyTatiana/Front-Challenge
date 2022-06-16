@@ -8,7 +8,7 @@ const deleteProviderAction = async (id:string) => {
     //     }
     // )
 
-    let response = await fetch(`http://raul-back-webflux.herokuapp.com/delete/provider/${id}`,
+    let response = await fetch(`http://new-raul-enterprise.herokuapp.com/delete/provider/${id}`,
         {
             method: 'DELETE',
         }

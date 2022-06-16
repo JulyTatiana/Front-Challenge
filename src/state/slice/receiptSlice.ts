@@ -29,8 +29,8 @@ const initialState: IReceiptState = {
 }
 
 enum receiptURL {
-    getAllReceiptsURL = 'https://raul-back-webflux.herokuapp.com/get/receipts',
-    postReceiptURL = 'https://raul-back-webflux.herokuapp.com/create/receipt',
+    getAllReceiptsURL = 'https://new-raul-enterprise.herokuapp.com/get/receipts',
+    postReceiptURL = 'https://new-raul-enterprise.herokuapp.com/create/receipt',
 } 
 
 export const getAllReceipts = createAsyncThunk('getAllReceipts', async () => {

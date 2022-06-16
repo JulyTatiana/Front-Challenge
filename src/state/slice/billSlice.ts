@@ -31,8 +31,8 @@ const initialState: IBillState = {
 }
 
 enum billURL {
-    getAllBillsURL = 'https://raul-back-webflux.herokuapp.com/get/bills',
-    postBillURL = 'https://raul-back-webflux.herokuapp.com/create/bill',
+    getAllBillsURL = 'https://new-raul-enterprise.herokuapp.com/get/bills',
+    postBillURL = 'https://new-raul-enterprise.herokuapp.com/create/bill',
 } 
 
 export const getAllBills = createAsyncThunk('getAllBills', async () => {

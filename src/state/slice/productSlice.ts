@@ -41,9 +41,9 @@ const initialState: IProductState = {
 }
 
 enum productsURL {
-    getAllProductsURL = 'https://raul-back-webflux.herokuapp.com/get/products',
-    postProductsURL = 'https://raul-back-webflux.herokuapp.com/create/product',
-    deleteProductBaseURL = 'https://raul-back-webflux.herokuapp.com/delete/product'
+    getAllProductsURL = 'https://new-raul-enterprise.herokuapp.com/get/products',
+    postProductsURL = 'https://new-raul-enterprise.herokuapp.com/create/product',
+    deleteProductBaseURL = 'https://new-raul-enterprise.herokuapp.com/delete/product'
 } 
 
 export const getAllProducts = createAsyncThunk('getAllProducts', async () => {

@@ -6,7 +6,7 @@ const getAllProvidersAction = async () => {
     //     }
     // )
 
-    let getProvider = await fetch("http://raul-back-webflux.herokuapp.com/get/providers",
+    let getProvider = await fetch("http://new-raul-enterprise.herokuapp.com/get/providers",
         {
             method: "GET"
         }

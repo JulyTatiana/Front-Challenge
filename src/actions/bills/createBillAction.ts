@@ -17,7 +17,7 @@ const createBillAction = async (date:String, client:String, seller:String, total
     // }
     // )
 
-    let saveBill = await fetch("https://raul-back-webflux.herokuapp.com/create/bill",
+    let saveBill = await fetch("https://new-raul-enterprise.herokuapp.com/create/bill",
     {
         method:"POST",
         headers: {"content-type": "application/json"},

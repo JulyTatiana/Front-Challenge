@@ -18,7 +18,7 @@ const createProductAction = async (productName:String, productDescription:String
     // }
     // )
 
-    let saveProduct = await fetch("http://raul-back-webflux.herokuapp.com/create/provider",
+    let saveProduct = await fetch("http://new-raul-enterprise.herokuapp.com/create/provider",
     {
         method:"POST",
         headers: {"content-type": "application/json"},
