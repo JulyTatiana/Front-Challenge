@@ -9,13 +9,23 @@ const createBillAction = async (date:String, client:String, seller:String, total
         productId: productId 
     }
 
-    let saveBill = await fetch("http://localhost:8090/create/bill",
+    // let saveBill = await fetch("http://localhost:8090/create/bill",
+    // {
+    //     method:"POST",
+    //     headers: {"content-type": "application/json"},
+    //     body: JSON.stringify(data)
+    // }
+    // )
+
+    let saveBill = await fetch("https://raul-back-webflux.herokuapp.com/create/bill",
     {
         method:"POST",
         headers: {"content-type": "application/json"},
         body: JSON.stringify(data)
     }
     )
+
+    
     let response = await saveBill.json()
 
     return response

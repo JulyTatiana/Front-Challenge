@@ -1,6 +1,12 @@
 const getBillAction = async () => {
 
-    let getBill = await fetch('http://localhost:8090/get/bills',
+    // let getBill = await fetch('http://localhost:8090/get/bills',
+    // {
+    //     method: 'GET'
+    // }
+    // )
+
+    let getBill = await fetch('http://raul-back-webflux.herokuapp.com/get/bills',
     {
         method: 'GET'
     }

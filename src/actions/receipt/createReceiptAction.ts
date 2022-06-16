@@ -9,13 +9,22 @@ const createReceiptAction = async(providerId:String, date:String, productUnits:N
         productId:productId
     }
 
-    let saveReceipt = await fetch("http://localhost:8090/create/receipt",
+    // let saveReceipt = await fetch("http://localhost:8090/create/receipt",
+    // {
+    //     method: 'POST',
+    //     headers: {'content-type': 'application/json'},
+    //     body: JSON.stringify(data)
+    // }
+    // )
+
+    let saveReceipt = await fetch("http://raul-back-webflux.herokuapp.com/create/receipt",
     {
         method: 'POST',
         headers: {'content-type': 'application/json'},
         body: JSON.stringify(data)
     }
     )
+
 
     let response = await saveReceipt.json()
 
